@@ -130,7 +130,7 @@ export default function ChatInterface({ initialImageUrl, onBack }: ChatInterface
           </motion.div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-2 sm:p-4 space-y-3 sm:space-y-4 scrollbar-hide">
+          <div className="flex-1 overflow-y-auto p-2 sm:p-4 pb-24 space-y-3 sm:space-y-4 scrollbar-hide">
             <AnimatePresence>
               {chatState.messages.map((message) => (
                 <ChatMessage key={message.id} message={message} />
