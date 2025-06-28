@@ -129,10 +129,10 @@ export default function ImageUpload({ onImageUpload, isUploading }: ImageUploadP
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white rounded-xl p-6 shadow-lg border border-gray-200"
+                className="bg-white rounded-xl p-4 sm:p-6 shadow-lg border border-gray-200 w-full max-w-md mx-auto"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-gray-900">
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900">
                     Selected Image
                   </h3>
                   <button
@@ -142,28 +142,26 @@ export default function ImageUpload({ onImageUpload, isUploading }: ImageUploadP
                     <X className="w-5 h-5" />
                   </button>
                 </div>
-                
-                <div className="relative mb-4">
+                <div className="relative mb-3 sm:mb-4">
                   <img
                     src={previewUrl!}
                     alt="Preview"
-                    className="w-full h-64 object-cover rounded-lg"
+                    className="w-full h-40 sm:h-64 object-cover rounded-lg"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-10 transition-all duration-200 rounded-lg" />
                 </div>
-                
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center text-sm text-gray-600">
-                    <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    {selectedFile.name}
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0">
+                  <div className="flex items-center text-xs sm:text-sm text-gray-600 break-all max-w-full">
+                    <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                    <span className="truncate max-w-[180px] sm:max-w-xs">{selectedFile.name}</span>
                   </div>
                   <button
                     onClick={handleUpload}
                     disabled={isUploading}
-                    className="btn-primary"
+                    className="btn-primary w-full sm:w-auto mt-2 sm:mt-0"
                   >
                     {isUploading ? (
-                      <div className="flex items-center">
+                      <div className="flex items-center justify-center">
                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
                         Analyzing...
                       </div>
