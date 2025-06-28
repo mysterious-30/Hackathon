@@ -18,7 +18,7 @@ export default function ChatMessage({ message }: ChatMessageProps) {
       transition={{ duration: 0.3 }}
       className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-3 sm:mb-4`}
     >
-      <div className={`flex ${isUser ? 'flex-row-reverse' : 'flex-row'} items-end max-w-[80vw] sm:max-w-xs md:max-w-md`}>
+      <div className={`flex ${isUser ? 'flex-row-reverse' : 'flex-row'} items-end max-w-[90vw] sm:max-w-xs md:max-w-md`}>
         {/* Avatar */}
         <div className={`flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center ${
           isUser ? 'ml-2 bg-primary-500' : 'mr-2 bg-dental-500'
