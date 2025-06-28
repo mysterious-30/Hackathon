@@ -1,0 +1,248 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply text-gray-900;
+    background: linear-gradient(135deg, #e0f7fa 0%, #f0fdf4 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  /* Decorative SVGs */
+  body::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 300px;
+    height: 300px;
+    background: url('/tooth-decor.svg') no-repeat center/contain;
+    opacity: 0.12;
+    z-index: 0;
+    pointer-events: none;
+  }
+  body::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    right: -80px;
+    width: 260px;
+    height: 260px;
+    background: url('/brush-decor.svg') no-repeat center/contain;
+    opacity: 0.10;
+    z-index: 0;
+    pointer-events: none;
+  }
+  /* Top-right smile */
+  body .smile-decor {
+    position: fixed;
+    top: 24px;
+    right: 32px;
+    width: 80px;
+    height: 80px;
+    opacity: 0.13;
+    z-index: 1;
+    pointer-events: none;
+  }
+  /* Bottom-left smile */
+  body .smile-decor-bl {
+    position: fixed;
+    bottom: 24px;
+    left: 32px;
+    width: 60px;
+    height: 60px;
+    opacity: 0.10;
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+
+@layer components {
+  .chat-container {
+    @apply max-w-4xl mx-auto h-screen flex flex-col relative z-10;
+  }
+  
+  .message-bubble {
+    @apply rounded-2xl px-4 py-3 max-w-xs lg:max-w-md;
+  }
+  
+  .message-user {
+    @apply bg-gradient-to-r from-primary-400 to-primary-600 text-white ml-auto shadow-lg;
+  }
+  
+  .message-ai {
+    @apply bg-white text-gray-800 border border-gray-200 shadow;
+  }
+  
+  .upload-zone {
+    @apply border-2 border-dashed border-primary-200 rounded-xl p-8 text-center transition-colors duration-200 shadow-lg bg-white bg-opacity-80;
+    background: linear-gradient(135deg, #e0f7fa 0%, #f0fdf4 100%);
+  }
+  
+  .upload-zone-active {
+    @apply border-primary-500 bg-primary-50 shadow-xl;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-400 to-primary-600 hover:from-primary-500 hover:to-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 shadow-md disabled:opacity-50 disabled:cursor-not-allowed;
+    box-shadow: 0 4px 16px 0 rgba(14, 165, 233, 0.10);
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 px-4 rounded-lg border border-gray-300 transition-colors duration-200;
+  }
+  
+  .sparkle {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    animation: bounceSparkle 2.2s infinite ease-in-out;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  @keyframes bounceSparkle {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-12px) scale(1.1); }
+  }
+  .animate-bounce-slow {
+    animation: bounceSparkle 2.8s infinite;
+  }
+}
+
+/* Footer styles */
+.footer-creative {
+  @apply fixed bottom-0 left-0 w-full flex items-center justify-center py-3 bg-white bg-opacity-80 text-gray-500 text-sm z-20 shadow-inner;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+}
+
+.background-creative .animated-gradient {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(120deg, #b3e5fc 0%, #a7ffeb 40%, #e0f7fa 70%, #f0fdf4 100%);
+  background-size: 200% 200%;
+  animation: gradientMove 22s ease-in-out infinite;
+  opacity: 0.92;
+}
+@keyframes gradientMove {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Floating icons - more, slower, more subtle */
+.background-creative .float-icon {
+  position: absolute;
+  opacity: 0.09;
+  filter: blur(0.5px);
+  animation: floatY 16s ease-in-out infinite;
+}
+.background-creative .float-icon2 {
+  animation-delay: 2.5s;
+  left: 80vw;
+  top: 60vh;
+  width: 60px;
+  height: 60px;
+}
+.background-creative .float-icon3 {
+  animation-delay: 4.2s;
+  left: 10vw;
+  top: 70vh;
+  width: 48px;
+  height: 48px;
+}
+.background-creative .float-icon4 {
+  animation-delay: 7s;
+  left: 60vw;
+  top: 15vh;
+  width: 40px;
+  height: 40px;
+}
+.background-creative .float-icon5 {
+  animation-delay: 10s;
+  left: 30vw;
+  top: 80vh;
+  width: 55px;
+  height: 55px;
+}
+.background-creative .float-icon6 {
+  animation-delay: 13s;
+  left: 85vw;
+  top: 30vh;
+  width: 35px;
+  height: 35px;
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+
+/* Bokeh particles - more subtle, slower */
+.background-creative .bokeh {
+  position: absolute;
+  border-radius: 9999px;
+  background: #fff;
+  opacity: 0.08;
+  filter: blur(10px);
+  animation: bokehMove 18s linear infinite;
+}
+.background-creative .bokeh2 {
+  left: 20vw;
+  top: 30vh;
+  width: 80px;
+  height: 80px;
+  animation-delay: 2s;
+}
+.background-creative .bokeh3 {
+  left: 70vw;
+  top: 80vh;
+  width: 60px;
+  height: 60px;
+  animation-delay: 4s;
+}
+.background-creative .bokeh4 {
+  left: 40vw;
+  top: 60vh;
+  width: 50px;
+  height: 50px;
+  animation-delay: 7s;
+}
+@keyframes bokehMove {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-40px) scale(1.1); }
+}
+
+/* Animated wave at the bottom */
+.background-creative .wave {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 120px;
+  z-index: 2;
+  opacity: 0.13;
+  pointer-events: none;
+  animation: waveMove 12s linear infinite;
+}
+@keyframes waveMove {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-40px); }
+} 
