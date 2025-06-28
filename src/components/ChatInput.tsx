@@ -37,9 +37,9 @@ export default function ChatInput({ onSendMessage, disabled }: ChatInputProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="bg-white border-t border-gray-200 p-4"
+      className="bg-white border-t border-gray-200 p-2 sm:p-4"
     >
-      <form onSubmit={handleSubmit} className="flex items-end space-x-3">
+      <form onSubmit={handleSubmit} className="flex items-end space-x-2 sm:space-x-3">
         <div className="flex-1 relative">
           <textarea
             ref={textareaRef}
@@ -48,32 +48,30 @@ export default function ChatInput({ onSendMessage, disabled }: ChatInputProps) {
             onKeyPress={handleKeyPress}
             placeholder="Type your message..."
             disabled={disabled}
-            className="w-full resize-none border border-gray-300 rounded-lg px-4 py-3 pr-12 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:bg-gray-50 disabled:cursor-not-allowed"
+            className="w-full resize-none border border-gray-300 rounded-lg px-3 py-2 sm:px-4 sm:py-3 pr-10 sm:pr-12 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:bg-gray-50 disabled:cursor-not-allowed text-sm sm:text-base"
             rows={1}
             maxLength={500}
           />
-          <div className="absolute right-3 bottom-3 flex items-center space-x-2">
+          <div className="absolute right-2 sm:right-3 bottom-2 sm:bottom-3 flex items-center space-x-2">
             <button
               type="button"
               disabled={disabled}
               className="text-gray-400 hover:text-gray-600 disabled:cursor-not-allowed transition-colors"
             >
-              <Paperclip className="w-4 h-4" />
+              <Paperclip className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </div>
         </div>
-        
         <motion.button
           type="submit"
           disabled={!message.trim() || disabled}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-primary-500 hover:bg-primary-600 disabled:bg-gray-300 text-white p-3 rounded-lg transition-colors duration-200 disabled:cursor-not-allowed"
+          className="bg-primary-500 hover:bg-primary-600 disabled:bg-gray-300 text-white p-3 sm:p-4 rounded-lg transition-colors duration-200 disabled:cursor-not-allowed flex-shrink-0"
         >
-          <Send className="w-5 h-5" />
+          <Send className="w-5 h-5 sm:w-6 sm:h-6" />
         </motion.button>
       </form>
-      
       {message.length > 0 && (
         <div className="text-xs text-gray-500 mt-2 text-right">
           {message.length}/500
