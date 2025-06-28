@@ -100,15 +100,15 @@ export default function ChatInterface({ initialImageUrl, onBack }: ChatInterface
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="chat-container"
+      className="chat-container px-1 sm:px-2 md:px-0"
     >
       <div className="flex-1 flex flex-col h-full justify-between">
-        <div className="backdrop-blur-lg bg-white bg-opacity-80 rounded-2xl shadow-2xl flex flex-col h-full">
+        <div className="backdrop-blur-lg bg-white bg-opacity-80 rounded-2xl shadow-2xl flex flex-col h-full p-2 sm:p-4 md:p-6">
           {/* Header */}
           <motion.div
             initial={{ y: -20 }}
             animate={{ y: 0 }}
-            className="bg-white bg-opacity-80 border-b border-gray-200 p-4 flex items-center justify-between rounded-t-2xl"
+            className="bg-white bg-opacity-80 border-b border-gray-200 p-3 sm:p-4 flex items-center justify-between rounded-t-2xl"
           >
             <div className="flex items-center space-x-3">
               <button
@@ -130,7 +130,7 @@ export default function ChatInterface({ initialImageUrl, onBack }: ChatInterface
           </motion.div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-hide">
+          <div className="flex-1 overflow-y-auto p-2 sm:p-4 space-y-3 sm:space-y-4 scrollbar-hide">
             <AnimatePresence>
               {chatState.messages.map((message) => (
                 <ChatMessage key={message.id} message={message} />
