@@ -69,16 +69,16 @@ export default function ImageUpload({ onImageUpload, isUploading }: ImageUploadP
       className="w-full max-w-2xl mx-auto"
     >
       <div className="flex justify-center">
-        <div className="backdrop-blur-lg bg-white bg-opacity-80 rounded-2xl shadow-2xl p-8 w-full max-w-2xl">
-          <div className="text-center mb-8">
-            <div className="flex justify-center mb-4 relative">
-              <img src="/tooth-decor.svg" alt="Tooth Illustration" className="w-28 h-28 drop-shadow-lg animate-bounce-slow z-10" />
-              <img src="/sparkle.svg" alt="Sparkle" className="sparkle" style={{ top: '-10px', left: '10px', width: '22px', height: '22px', animationDelay: '0.2s' }} />
-              <img src="/sparkle.svg" alt="Sparkle" className="sparkle" style={{ top: '10px', right: '-10px', width: '18px', height: '18px', animationDelay: '0.7s' }} />
-              <img src="/sparkle.svg" alt="Sparkle" className="sparkle" style={{ bottom: '-8px', left: '30px', width: '14px', height: '14px', animationDelay: '1.1s' }} />
+        <div className="backdrop-blur-lg bg-white bg-opacity-80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-8 w-full max-w-lg sm:max-w-xl md:max-w-2xl mx-2 sm:mx-4">
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="flex justify-center mb-3 sm:mb-4 relative">
+              <img src="/tooth-decor.svg" alt="Tooth Illustration" className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 drop-shadow-lg animate-bounce-slow z-10" />
+              <img src="/sparkle.svg" alt="Sparkle" className="sparkle" style={{ top: '-10px', left: '10px', width: '18px', height: '18px', animationDelay: '0.2s' }} />
+              <img src="/sparkle.svg" alt="Sparkle" className="sparkle" style={{ top: '10px', right: '-10px', width: '14px', height: '14px', animationDelay: '0.7s' }} />
+              <img src="/sparkle.svg" alt="Sparkle" className="sparkle" style={{ bottom: '-8px', left: '30px', width: '10px', height: '10px', animationDelay: '1.1s' }} />
             </div>
-            <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-dental-400 to-primary-700 mb-2 drop-shadow-md" style={{textShadow: '0 2px 8px rgba(0,0,0,0.10)'}}>Dental AI Consultation</h1>
-            <p className="text-gray-700 text-lg font-medium mb-2" style={{textShadow: '0 1px 4px rgba(0,0,0,0.08)'}}>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-dental-400 to-primary-700 mb-1 sm:mb-2 drop-shadow-md" style={{textShadow: '0 2px 8px rgba(0,0,0,0.10)'}}>Dental AI Consultation</h1>
+            <p className="text-gray-700 text-base sm:text-lg font-medium mb-2" style={{textShadow: '0 1px 4px rgba(0,0,0,0.08)'}}>
               Upload an image of your oral issue to get <span className="text-primary-500 font-semibold">professional advice</span>
             </p>
           </div>
